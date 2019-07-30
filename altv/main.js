@@ -5,37 +5,41 @@ $( document ).ready(function() {
     var i = 0;
     var inc = 0;
 
-    for (var i = 0; i < 10; i++) {
     $.ajax(
         {
            url : source,
            method: "GET",
            success: function(data){
-             // var test = data.response[0];
-             // console.log(test);
-             inc = inc + 1;
-             var img = data.response[inc].poster;
-             var titolo = data.response[inc].title;
-             var autore = data.response[inc].author;
-             var genere = data.response[inc].genre;
-             var anno = data.response[inc].year;
+             var oggetti = data.response;
+             console.log(oggetti);
 
-             var sorgenteCodice = $("#cdtemplate").html();
+             for (var i = 0; i < oggetti.length; i++) {
+              console.log(oggetti[i]);
 
-             var template = Handlebars.compile(sorgenteCodice);
+              var img = data.response[i].poster;
+              var titolo = data.response[i].title;
+              var autore = data.response[i].author;
+              var genere = data.response[i].genre;
+              var anno = data.response[i].year;
 
-             var daInserire = {
-               urlImg: img,
-               title:titolo,
-               artist:autore,
-               genre:genere,
-               year:anno,
+              var sorgenteCodice = $("#cdtemplate").html();
 
-             };
+              var template = Handlebars.compile(sorgenteCodice);
 
-             var html = template(daInserire);
+              var daInserire = {
+                urlImg: img,
+                title:titolo,
+                artist:autore,
+                genre:genere,
+                year:anno,
 
-             $(".cds-container").append(html);
+              };
+
+              var html = template(daInserire);
+
+              $(".cds-container").append(html);
+            }
+
 
            },
            error: function(richiesta,stato,errore){
@@ -44,12 +48,11 @@ $( document ).ready(function() {
         }
       )
 
-    }
 
 
     $(".btn-group a").click(
         function(){
-          $(".cd").hide();
+          $(".cd").hide(200);
           var bottone = $(this).text();
           $(".cd").each(function(i) {
             var gen = $(this).find(".genre");
@@ -57,7 +60,7 @@ $( document ).ready(function() {
 
             console.log("Bottone",bottone);
             if (quale == bottone) {
-              $(this).show();
+              $(this).show(200);
             }
           })
         }
@@ -65,7 +68,7 @@ $( document ).ready(function() {
 
       $(".all").click(
           function(){
-            $(".cd").show();
+            $(".cd").show(200);
           }
         )
 
