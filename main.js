@@ -41,40 +41,13 @@ $( document ).ready(function() {
 
              $(".cds-container").append(html);
 
-
-
            },
            error: function(richiesta,stato,errore){
               console.log("c'è un problema con il server",richiesta,stato,errore);
            }
         }
       )
-    //
-    //
-    // var sorgenteCodice = $("#cdtemplate").html();
-    // console.log(sorgenteCodice);
-    //
-    // var template = Handlebars.compile(sorgenteCodice);
-    //
-    // var daInserire = {
-    //   textMessaggio: inputval,
-    //   classeAggiunta:"msg-inviato"
-    // };
-    //
-    // var html = template(daInserire);
-    //
-    // $(".contenitore").append(html);
-    //
-
 
     }
-
-
-
-
-
-
-
-
 
 });

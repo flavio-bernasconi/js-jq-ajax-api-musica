@@ -11,7 +11,6 @@ $( document ).ready(function() {
            url : source,
            method: "GET",
            success: function(data){
-
              // var test = data.response[0];
              // console.log(test);
              inc = inc + 1;
@@ -48,9 +47,6 @@ $( document ).ready(function() {
     }
 
 
-
-
-
     $(".btn-group a").click(
         function(){
           $(".cd").hide();
@@ -67,13 +63,11 @@ $( document ).ready(function() {
         }
       )
 
-
       $(".all").click(
           function(){
             $(".cd").show();
           }
         )
-
 
 
 });
