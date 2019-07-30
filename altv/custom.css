@@ -31,7 +31,7 @@ header img {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .cd {
@@ -42,9 +42,15 @@ header img {
     flex-basis: 200px;
     padding: 20px;
     margin: 10px 20px;
-    height: 360px;
+    height: 390px;
     background: rgb(46, 58, 70);
     text-align: center;
+    transition: 0.3s;
+}
+.cd:hover{
+  transform: translateY(-5px);
+  box-shadow: 1px 6px 10px rgb(18, 18, 18);
+  cursor: pointer;
 }
 
 .cd img {
@@ -57,7 +63,9 @@ header img {
     font-size: 22px;
     text-transform: uppercase;
 }
-
+.cd span{
+  margin: 3px 0;
+}
 .cd span.author {
     color: grey;
     font-size: 20px;
@@ -74,8 +82,22 @@ header img {
   display: block;
 }
 
+.btn-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 .btn-group a{
   color:white;
-  margin-right: 20px;
+  margin-right: 40px;
   font-size: 2rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.btn-group a.active{
+  text-decoration: overline;
+}
+.genre{
+  color: #9f9f9f;
 }

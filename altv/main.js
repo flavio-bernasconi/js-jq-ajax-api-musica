@@ -52,7 +52,9 @@ $( document ).ready(function() {
 
     $(".btn-group a").click(
         function(){
-          $(".cd").hide(200);
+          $(".cd").hide();
+          $(".btn-group a").removeClass("active");
+          $(this).addClass("active");
           var bottone = $(this).text();
           $(".cd").each(function(i) {
             var gen = $(this).find(".genre");
@@ -60,7 +62,7 @@ $( document ).ready(function() {
 
             console.log("Bottone",bottone);
             if (quale == bottone) {
-              $(this).show(200);
+              $(this).fadeIn(500);
             }
           })
         }
@@ -68,7 +70,7 @@ $( document ).ready(function() {
 
       $(".all").click(
           function(){
-            $(".cd").show(200);
+            $(".cd").fadeIn(500);
           }
         )
 
